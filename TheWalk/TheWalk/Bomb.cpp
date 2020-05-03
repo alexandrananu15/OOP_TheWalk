@@ -1,7 +1,7 @@
 #include "Bomb.h"
 
 
-Bomb::Bomb(Position poz) : Item(ItemType::BOMB, poz)
+Bomb::Bomb(Position poz) : Item(" X ", ItemType::BOMB, poz)
 {
 
 }

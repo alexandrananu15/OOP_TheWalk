@@ -15,9 +15,23 @@ void Game::beginGame()
 	std::cout << "Sa incepem prin a configura proprietatile hartii";
 	std::cout << endl;
 	this->gameStatus = 1;
-	std::cout << "Vreti ca lumea sa fie un patrat cu latura de:... ";
-	int n;
-	std::cin >> n;
+	
+	int n = -1;
+	while (n < 7)
+	{
+		std::cout << "Vreti ca lumea sa fie un patrat cu latura de:... (introductei o valoare mai mare sau egala cu 7):  ";
+		std::cin >> n;
+		try
+		{
+			if (n < 7)
+				throw - 1;
+		}
+		catch (int e)
+		{
+			cout << "Nu ati introdus o tasta valida. ";
+			n = e;
+		}
+	}
 	this->map = new World(n, n);
 	std::cout << endl << endl;
 	std::cout << "Sa va prezentam robotii:";
@@ -29,7 +43,7 @@ void Game::beginGame()
 	std::cout << endl << endl;
 	std::cout << "Robot no. 2: THE AFRAID" << endl;
 	std::cout << "Acest robot este timid si foarte speriat. " << endl;;
-	std::cout << "El cunoaste foarte bine locatiile unde sunt bombele, de aceea sansele ca el sa se atinga de una sunt foarte mici. Fiind un ipohondru, cauta mereu serviciile medicale, insa din spitale ppoate prelua virusi periculosi cum ar fi CoronaVirus. " << endl;
+	std::cout << "El cunoaste foarte bine locatiile unde sunt bombele, de aceea sansele ca el sa se atinga de una sunt foarte mici. Fiind un ipohondru, cauta mereu serviciile medicale, insa din spitale poate prelua virusi periculosi cum ar fi CoronaVirus. " << endl;
 	std::cout << "Are un maxim de 6 vieti posibile, insa incepe doar cu 3.";
 	std::cout << endl << endl;
 	std::cout << "Robot no. 3: THE DRUNK" << endl;
@@ -134,7 +148,7 @@ void Game::run()
 	}
 }
 
-int Game::getGameStatus()
+int Game::getGameStatus() const
 {
 	return gameStatus;
 }
@@ -144,12 +158,12 @@ void Game::setGameStatus(int status)
 	gameStatus = status;
 }
 
-Robot& Game::getRobot()
+Robot& Game::getRobot() const
 {
 	return *this->robot;
 }
 
-World& Game::getMap()
+World& Game::getMap() const
 {
 	return *this->map;
 }

@@ -1,6 +1,6 @@
 #include "CoVid.h"
 
-CoVid::CoVid(Position poz) : Item(ItemType::COVID, poz)
+CoVid::CoVid(Position poz) : Item(" * ", ItemType::COVID, poz)
 {
 
 }

@@ -10,6 +10,7 @@
 class TheAfraid : public Robot
 {
 	bool covid;
+
 public:
 	TheAfraid(const int, Position);
 	void activateCovid(bool);

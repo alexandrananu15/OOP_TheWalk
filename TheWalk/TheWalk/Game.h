@@ -17,10 +17,10 @@ public:
 	~Game();
 	void beginGame();			//incepe jocul
 	void run();					//joaca
-	int getGameStatus();
+	int getGameStatus() const;
 	void setGameStatus(int);
-	Robot& getRobot();
-	World& getMap();
+	Robot& getRobot() const;
+	World& getMap() const;
 	void clearGame();
 };
 

@@ -11,6 +11,7 @@
 class TheDrunk : public Robot
 {
 	Position memory;
+
 public:
 	TheDrunk(const int, Position);
 	int makeOneStep(vector<Item*>);

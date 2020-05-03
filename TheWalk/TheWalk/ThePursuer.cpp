@@ -44,7 +44,7 @@ int ThePursuer::makeOneStep(vector<Item*> neighbourhood)
 			else if (item->getType() == ItemType::BOMB)
 			{
 				this->modifyHealth(-100);
-				Bomb* bomb = static_cast<Bomb*>(item);
+				item->toggleState();
 				item->mesaj();
 				std::cout << std::endl;
 				return -1;
@@ -52,7 +52,7 @@ int ThePursuer::makeOneStep(vector<Item*> neighbourhood)
 			else if (item->getType() == ItemType::BOOSTHEALTH)
 			{
 				this->modifyHealth(1);
-				BoostHealth* bh = static_cast<BoostHealth*>(item);
+				item->toggleState();
 				item->mesaj();
 				std::cout << std::endl;
 				
@@ -60,7 +60,7 @@ int ThePursuer::makeOneStep(vector<Item*> neighbourhood)
 			else if (item->getType() == ItemType::THISTLE)
 			{
 				this->modifyHealth(-1);
-				Thistle* bh = static_cast<Thistle*>(item);
+				item->toggleState();
 				item->mesaj();
 				std::cout << std::endl;
 			}

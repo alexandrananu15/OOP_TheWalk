@@ -32,7 +32,7 @@ Position& Position::operator+=(const Position& p)
 	return *this;
 }
 
-bool Position::operator==(const Position& p)
+bool Position::operator==(const Position& p) const
 {
 	return (p.line == this->line && p.column == this->column);
 }

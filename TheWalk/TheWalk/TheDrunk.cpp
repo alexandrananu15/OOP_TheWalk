@@ -55,7 +55,7 @@ int TheDrunk::makeOneStep(vector<Item*> neighbourhood)
 			else if (item->getType() == ItemType::BOMB)				//finalizeaza jocul
 			{
 				this->modifyHealth(-100);
-				Bomb* bomb = static_cast<Bomb*>(item);
+				item->toggleState();
 				item->mesaj();
 				std::cout << std::endl;
 				return -1;
@@ -63,7 +63,7 @@ int TheDrunk::makeOneStep(vector<Item*> neighbourhood)
 			else if (item->getType() == ItemType::BOOSTHEALTH)		//o viata in plus
 			{
 				this->modifyHealth(1);
-				BoostHealth* bh = static_cast<BoostHealth*>(item);
+				item->toggleState();
 				item->mesaj();
 				std::cout << std::endl;
 
@@ -71,15 +71,17 @@ int TheDrunk::makeOneStep(vector<Item*> neighbourhood)
 			else if (item->getType() == ItemType::THISTLE)			//o viata in minus
 			{
 				this->modifyHealth(-1);
-				Thistle* bh = static_cast<Thistle*>(item);
+				item->toggleState();
 				item->mesaj();
 				std::cout << std::endl;
 			}
 			else if (item->getType() == ItemType::BACKWARDS)		//un pas in spate
 			{
 				this->setPosition(memory);
+				item->toggleState();
 				item->mesaj();
 				std::cout << std::endl;
+				std::cout << "V-ati mutat inapoi pe pozitia " << position.line << " " << position.column << std::endl;
 			}
 
 		}

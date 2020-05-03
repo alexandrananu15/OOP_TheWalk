@@ -3,6 +3,7 @@
 #include <string>
 
 #include "Item.h"
+#include "Backwards.h"
 #include "Bomb.h"
 #include "BoostHealth.h"
 #include "Teleporter.h"
@@ -22,8 +23,6 @@ public:
 	World(int, int);
 	~World();
 	friend std::ostream	&operator<<(std::ostream&, const World&);
-	int getNoLines();
-	int getNoColumns();
 	Item* getItem(int, int) const;
 	void modifyCell(int, Position);
 	Position getDestination() const;

@@ -37,19 +37,19 @@ destination(rand() % noLines, rand() % noColumns)
 				items.push_back(new Teleporter({ i, j }, { rand() % noLines, rand() % noColumns }));
 				matrix[i][j] = items.size() - 1;
 			}
-			else if (procent < 35)
+			else if (procent < 37)
 			{
 				items.push_back(new Thistle({ i, j }));
 				matrix[i][j] = items.size() - 1;
 			}
-			else if (procent < 45)
+			else if (procent < 47)
 			{
 				items.push_back(new CoVid({ i, j }));
 				matrix[i][j] = items.size() - 1;
 			}
-			else if (procent < 55)
+			else if (procent < 60)
 			{
-				items.push_back(new CoVid({ i, j }));
+				items.push_back(new Backwards({ i, j }));
 				matrix[i][j] = items.size() - 1;
 			}
 		}
@@ -70,26 +70,13 @@ std::ostream& operator<<(std::ostream& out, const World& harta)
 		for (int j = 0; j < harta.noColumns; ++j)
 		{
 			if (harta.matrix[i][j] == -1)
-				out << " @ ";				
+				out << " @ ";
 			else if (harta.matrix[i][j] == -2)
 				out << " $ ";
 			else if (harta.getItem(i, j))
-			{
-				if (harta.getItem(i, j)->getType() == ItemType::TELEPORTER)
-					out << " T ";
-				else if (harta.getItem(i, j)->getType() == ItemType::BOMB)
-					out << " X ";
-				else if (harta.getItem(i, j)->getType() == ItemType::BOOSTHEALTH)
-					out << " + ";
-				else if (harta.getItem(i, j)->getType() == ItemType::THISTLE)
-					out << " # ";
-				else if (harta.getItem(i, j)->getType() == ItemType::COVID)
-					out << " * ";
-				else if (harta.getItem(i, j)->getType() == ItemType::BACKWARDS)
-					out << " < ";
-			}
+				out << harta.getItem(i, j)->getCharacter();
 			else
-				out << "   ";
+				out << " . ";
 
 		}
 		out << std::endl;
@@ -103,15 +90,6 @@ void World::modifyCell(int value, Position poz)
 		matrix[poz.line][poz.column] = value;
 }
 
-int World::getNoLines()
-{
-	return noLines;
-}
-
-int World::getNoColumns()
-{
-	return noColumns;
-}
 
 Item* World::getItem(int l, int c) const
 {

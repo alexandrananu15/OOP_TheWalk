@@ -67,15 +67,15 @@ int TheAfraid::makeOneStep(vector<Item*> neighbourhood)
 			else if (item->getType() == ItemType::BOMB)					//termina jocul
 			{
 				this->modifyHealth(-100);
-				//Bomb* bomb = static_cast<Bomb*>(item);
+				item->toggleState();
 				item->mesaj();
 				std::cout << std::endl;
 				return -1;
 			}
 			else if (item->getType() == ItemType::BOOSTHEALTH)			//ii da o viata in plus
 			{
-				this->modifyHealth(1);
-				//BoostHealth* bh = static_cast<BoostHealth*>(item);
+				this->modifyHealth(1); 
+				item->toggleState();
 				item->mesaj();
 				std::cout << std::endl;
 
@@ -83,13 +83,14 @@ int TheAfraid::makeOneStep(vector<Item*> neighbourhood)
 			else if (item->getType() == ItemType::THISTLE)				//ii scade o viata
 			{
 				this->modifyHealth(-1);
-				//Thistle* bh = static_cast<Thistle*>(item);
+				item->toggleState();
 				item->mesaj();
 				std::cout << std::endl;
 			}
 			else if (item->getType() == ItemType::COVID)				//il imbolnaveste de Corona sau il face bine
 			{
 				CoVid* bh = static_cast<CoVid*>(item);
+				item->toggleState();
 				this->activateCovid(bh->activateCovid(covid));
 				std::cout << std::endl;
 			}

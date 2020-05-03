@@ -5,7 +5,7 @@
 
 class Bomb :public Item
 {
-
+	
 public:
 	Bomb(Position);
 	void mesaj();

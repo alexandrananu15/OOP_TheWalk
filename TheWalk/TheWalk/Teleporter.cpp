@@ -1,7 +1,7 @@
 #include "Teleporter.h"
 #include <iostream>
 
-Teleporter::Teleporter(Position poz, Position tel) : teleport(tel), Item(ItemType::TELEPORTER, poz)
+Teleporter::Teleporter(Position poz, Position tel) : teleport(tel), Item(" T ", ItemType::TELEPORTER, poz)
 {
 
 }

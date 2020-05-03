@@ -8,6 +8,6 @@ struct Position
 	Position(const Position&);
 	Position& operator=(const Position&);
 	Position& operator+=(const Position&);
-	bool operator==(const Position&);
+	bool operator==(const Position&) const;
 };
 

@@ -1,7 +1,7 @@
 #include "BoostHealth.h"
 
 
-BoostHealth::BoostHealth(Position poz) : Item(ItemType::BOOSTHEALTH, poz)
+BoostHealth::BoostHealth(Position poz) : Item(" + ", ItemType::BOOSTHEALTH, poz)
 {
 
 }

@@ -5,7 +5,7 @@
 
 class Backwards : public Item
 {
-
+	
 public:
 	Backwards(Position);
 	void mesaj();

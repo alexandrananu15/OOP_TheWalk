@@ -1,6 +1,6 @@
 #include "Item.h"
 
-Item::Item(ItemType it, Position poz) : type(it), itemPos(poz), active(true)
+Item::Item(const char* c, ItemType it, Position poz) : chr(c), type(it), itemPos(poz), active(true)
 {
 
 }
@@ -24,6 +24,11 @@ void Item::toggleState()
 bool Item::isActive() const
 {
 	return active;
+}
+
+const char* Item::getCharacter() const
+{
+	return chr;
 }
 
 Item::~Item()
