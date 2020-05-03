@@ -4,7 +4,7 @@
 
 int main()
 {
-    srand(time(0));
+    srand(static_cast<int>(time(0)));
     Game* joc = new Game();
     joc->run();
 
