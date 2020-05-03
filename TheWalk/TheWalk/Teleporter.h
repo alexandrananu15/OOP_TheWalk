@@ -9,7 +9,7 @@ class Teleporter : public Item
 
 public:
 	Teleporter(Position, Position);
-	void mesaj();
+	void mesaj() const;
 	Position getTeleport() const;
 };
 

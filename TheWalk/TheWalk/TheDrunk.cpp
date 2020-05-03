@@ -1,6 +1,6 @@
 #include "TheDrunk.h"
 
-//The Drunk se deplaseaza catre cel mai apropiat item, fie el capcana sau obiect bun
+//The Drunk se deplaseaza catre cel mai apropiat item, fie el capcana sau obiect bun, daca ajunge la destinatie, o face din greseala, este prea ametit sa o gaseasa
 //Daca nu are itemi in apropiere, atunci se deplaseaza pe diagonala in jos
 //interactioneaza cu toati itemii, mai putin cu virusul CoVid, la care este imun
 //Are un potential de 10 vieti, insa, nu stie sa inoate, daca ajunge pe marginea hartii, poate cadea in marea ce o inconjoara, murind inecat

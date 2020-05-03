@@ -9,7 +9,7 @@ class CoVid : public Item
 public:
 	CoVid(Position);
 	bool activateCovid(bool);
-	void mesaj();
-	void mesaj2();
+	void mesaj() const;
+	void mesaj2() const;
 };
 

@@ -19,7 +19,7 @@ public:
 	Item(const char*, ItemType, Position);
 	virtual ~Item() = 0;
 	Position getPosition() const;
-	virtual void mesaj() = 0;
+	virtual void mesaj() const = 0;
 	ItemType getType() const;
 	void toggleState();
 	bool isActive() const;

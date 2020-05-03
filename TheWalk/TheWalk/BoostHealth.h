@@ -8,6 +8,6 @@ class BoostHealth : public Item
 
 public:
 	BoostHealth(Position);
-	void mesaj();
+	void mesaj() const;
 };
 

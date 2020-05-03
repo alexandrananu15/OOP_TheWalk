@@ -8,6 +8,6 @@ class Backwards : public Item
 	
 public:
 	Backwards(Position);
-	void mesaj();
+	void mesaj() const;
 };
 

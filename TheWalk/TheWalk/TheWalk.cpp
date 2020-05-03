@@ -17,6 +17,6 @@ int main()
  // # - Thistle/Spine
  // X - Bomb
  // < - Obligates you to make one step back
- //
+ // . - nothing
 
 }

@@ -17,7 +17,7 @@ int ThePursuer::makeOneStep(vector<Item*> neighbourhood)
 		if (item->getType() == ItemType::TELEPORTER or item->getType() == ItemType::THISTLE)
 			attraction = item->getPosition();
 
-	//se misca in diagonala spre destinatie
+	//face pasul spre atractia lui
 	if (this->position.line < attraction.line)
 		this->modifyPosition({ 1, 0 });
 	else if (this->position.line > attraction.line)

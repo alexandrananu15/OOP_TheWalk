@@ -1,17 +1,2 @@
-﻿  Backwards.cpp
-  Bomb.cpp
-  BoostHealth.cpp
-  CoVid.cpp
-  Game.cpp
-  Item.cpp
-  Robot.cpp
-  Teleporter.cpp
-  TheAfraid.cpp
-  TheDrunk.cpp
-  ThePursuer.cpp
-  TheWalk.cpp
-C:\Users\alexa\Desktop\The Walk\TheWalk\TheWalk\TheWalk.cpp(7,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Thistle.cpp
-  World.cpp
-  Generating Code...
+﻿  TheDrunk.cpp
   TheWalk.vcxproj -> C:\Users\alexa\Desktop\The Walk\TheWalk\Debug\TheWalk.exe

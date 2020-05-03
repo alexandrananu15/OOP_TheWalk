@@ -6,6 +6,6 @@ class Thistle : public Item
 
 public:
 	Thistle(Position);
-	void mesaj();
+	void mesaj() const;
 };
 
